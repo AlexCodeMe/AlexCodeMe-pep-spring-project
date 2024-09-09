@@ -88,7 +88,7 @@ As a User, I should be able to submit a DELETE request on the endpoint DELETE lo
 
 ## 7: Our API should be able to update a message text identified by a message ID.
 
-As a user, I should be able to submit a PATCH request on the endpoint PATCH localhost:8080/messages/{messageId}. The request body should contain a new messageText values to replace the message identified by messageId. The request body can not be guaranteed to contain any other information.
+As a user, I should be able to submit a PATCH request on the endpoint PATCH localhost:8080/messages/{messageId}. The request body should contain a new messageText values to replace the message identified by message Id. The request body can not be guaranteed to contain any other information.
 
 - The update of a message should be successful if and only if the message id already exists and the new messageText is not blank and is not over 255 characters. If the update is successful, the response body should contain the number of rows updated (1), and the response status should be 200, which is the default. The message existing on the database should have the updated messageText.
 - If the update of the message is not successful for any reason, the response status should be 400. (Client error)
