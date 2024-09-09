@@ -1,5 +1,22 @@
 package com.example.controller;
 
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.entity.Account;
+import com.example.entity.Message;
+import com.example.service.AccountService;
+import com.example.service.MessageService;
 
 /**
  * TODO: You will need to write your own endpoints and handlers for your controller using Spring. The endpoints you will need can be
@@ -7,6 +24,54 @@ package com.example.controller;
  * where applicable as well as the @ResponseBody and @PathVariable annotations. You should
  * refer to prior mini-project labs and lecture materials for guidance on how a controller may be built.
  */
+@RestController
 public class SocialMediaController {
 
+    private AccountService accountService;
+    private MessageService messageService;
+
+    public SocialMediaController(AccountService accountService, MessageService messageService) {
+        this.accountService = accountService;
+        this.messageService = messageService;
+    }
+
+    @PostMapping("register")
+    public ResponseEntity<Account> register(@RequestBody Account account) {
+        return null;
+    }
+
+    @PostMapping("login")
+    public ResponseEntity<Account> login(@RequestBody Account account) {
+        return null;
+    }
+
+    @PostMapping("messages")
+    public ResponseEntity<Message> createMessage(@RequestBody Message message) {
+        return null;
+    }
+
+    @GetMapping("messages")
+    public ResponseEntity<List<Message>> getAllMessages() {
+        return null;
+    }
+
+    @GetMapping("messages/{messageId}")
+    public ResponseEntity<Message> getMessageById(@PathVariable Integer messageId) {
+        return null;
+    }
+
+    @DeleteMapping("messages/{messageId}")
+    public ResponseEntity<Integer> deleteMessageById(@PathVariable Integer messageId) {
+        return null;
+    }
+
+    @PatchMapping("messages/{messageId}")
+    public ResponseEntity<Integer> patchMessageById(@RequestBody Message message, @PathVariable Integer messageId) {
+        return null;
+    }
+
+    @GetMapping("accounts/{accountId}/messages")
+    public ResponseEntity<List<Message>> getMessageByAccountId(@PathVariable Integer accountId) {
+        return null;
+    }
 }
